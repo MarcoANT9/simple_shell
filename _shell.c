@@ -139,7 +139,6 @@ void _simple_shell(char *argenv[])
 		else
 		{
 			wait(NULL);
-			kill(0, SIGTERM);
 		}
 	}
 }
