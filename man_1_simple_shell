@@ -4,10 +4,10 @@
 .SH NAME
 simple_shell -- hsh
 .SH SYNOPSIS
-.B ./hsh 
+.B ./hsh
 [command] [options]
 .SH DESCRIPTION
-.B hsh 
+.B hsh
 (Simple Shell) A simple command line interpreter.
 .SH OVERVIEW
 The simple shell interprets and executes commands.
@@ -22,7 +22,7 @@ $/bin/ls
 $
 .SH OPTIONS
 .SH FILES
-.I dragola.c 
+.I dragola.c
 - Contains all the functions, structures and standard C library header file.
 .I main.c
 - Information
@@ -31,8 +31,8 @@ $
 .SH Return Value
 After a successful result, the main functions will return the desired commands.
 .SH BUGS
-Report 
-.B simple shell 
+Report
+.B simple shell
 bugs to https://github.com/MarcoANT9
 .SH AUTHORS
-Luz Sánchez and Marco Antonio Niño. 
+Luz Sánchez and Marco Antonio Niño.
