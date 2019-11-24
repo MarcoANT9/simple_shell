@@ -1,11 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <string.h>
-#include <signal.h>
-/** #include "dragola.h" */
+#include "dragola.h"
 
 /**
  * _strlen - Counts the len of a string.

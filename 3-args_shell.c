@@ -53,22 +53,6 @@ char **_interpreter3(char *func_name, char **argv)
 */
 }
 
-
-/**
- * add_path3 - Adds path for commands.
- *
- * @argv: name of the command to find the path.
- * @argenv: Environment variables.
- *
- * Description - This function adds the path to a command which doesn't have it.
- *               The 3 at the end means is for the 3rd variaton of shell.
- *
- * Return: An array of chars (char *) to the new name.
- */
-
-
-
-
 /**
  * _args_shell - Emulates a simple shell.
  *
