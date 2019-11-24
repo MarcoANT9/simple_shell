@@ -24,14 +24,24 @@
 /**-FUNCTIONS--------------------------------------------------------------*/
 /**========================================================================*/
 
-/** 0. Simple Shell data from echo */
+/** 1. Simple Shell data from echo */
 void _echo_shell(char *argenv[]);
 
-/** 1. Simple Shell with Prompt */
+/** 2. Simple Shell with Prompt */
 void _prompt_shell(char *argenv[]);
 
-/** 2. Simple Shell without Prompt with argv */
+/** 3. Simple Shell without Prompt with argv */
 void _args_shell(char *argv[], char *argenv[]);
+
+/** 4. Create the path */
+char **find_path(char *argenv[]);
+
+/** 5. Combinate command with the folder in which it is located. */
+char *full_path(char *tokenpath[], char *command);
+
+
+
+
 
 
 #endif
