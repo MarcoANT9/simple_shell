@@ -24,9 +24,14 @@
 /**-FUNCTIONS--------------------------------------------------------------*/
 /**========================================================================*/
 
-/** 0. Simple Shell */
-void _simple_shell(char *argenv[]);
+/** 0. Simple Shell data from echo */
+void _echo_shell(char *argenv[]);
 
+/** 1. Simple Shell with Prompt */
+void _prompt_shell(char *argenv[]);
+
+/** 2. Simple Shell without Prompt with argv */
+void _args_shell(char *argv[], char *argenv[]);
 
 
 #endif
