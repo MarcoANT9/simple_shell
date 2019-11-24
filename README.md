@@ -4,18 +4,16 @@ This is a final project to create a simple shell, where basic functions will be 
 
 ## Description
 
-The simple shell is a command line interpreter that was first conceived by Ken Thompson in 1971. Users can direct the operation of the computer by entering commands as text for a command line interpreter to execute, or by creating text scripts of one or more such commands. This shell includes basic functionality found in the traditional Unix shell. 
-
+The simple shell is a command line interpreter that was first conceived by Ken Thompson in 1971. Users can direct the operation of the computer by entering commands as text for a command line interpreter to execute, or by creating text scripts of one or more such commands. This shell includes basic functionality found in the traditional Unix shell.
 ## Repository Contents
 Simple Shell files:
 
 File  | Description
 ------------- | -------------
 dragola.h  | Contains all the functions, structures and standard C library header file.
-main.c  | Content Cell 
+main.c  | Content Cell
 _shell.c | Content Cell
 _man_1_simple_shell | Contains the manual page simple shell.
-
 ## Environment
 Simple Shell was built and tested in the Ubuntu 14.04 LTS with Vagrant in VirtualBox and compiled with GCC version 4.8.4.
 ## How to Install
