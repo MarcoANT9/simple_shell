@@ -33,10 +33,13 @@ void _prompt_shell(char *argenv[]);
 /** 3. Simple Shell without Prompt with argv */
 void _args_shell(char *argv[], char *argenv[]);
 
-/** 4. Create the path */
+/** 4. Function decide if a command exits or not */
+char *func_exits(char *argv[], char *argenv[]);
+
+/** 5. Create the path */
 char **find_path(char *argenv[]);
 
-/** 5. Combinate command with the folder in which it is located. */
+/** 6. Combinate command with the folder in which it is located. */
 char *full_path(char *tokenpath[], char *command);
 
 
