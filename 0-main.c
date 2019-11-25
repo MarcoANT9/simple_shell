@@ -1,7 +1,8 @@
 #include "dragola.h"
 
 /**
- * main - Simple shell
+ * main - Simple shell.
+ *
  * @argc: Number of arguments that enter the main.
  * @argv: String of arguments that enter the main.
  * @argenv: Environment Variables.

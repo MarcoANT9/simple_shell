@@ -36,8 +36,8 @@ void _args_shell(char *argv[], char *argenv[]);
 /** A. Interpreter */
 char **_interpreter(char *buff);
 
-/** 4. Function decide if a command exits or not */
-char *func_exits(char *argv[], char *argenv[]);
+/** 4. Function put the PATH */
+char *func_put_path(char *command, char *argenv[]);
 
 /** 5. Create the path */
 char **find_path(char *argenv[]);
