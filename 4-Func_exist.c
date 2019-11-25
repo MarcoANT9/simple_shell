@@ -1,5 +1,7 @@
 #include "dragola.h"
 
+int _strlen(char *);
+
 /**
  * func_fun_path - This function will create a PATH for a command.
  *
@@ -14,7 +16,7 @@ char *func_put_path(char *command, char *argenv[])
 {
 
 	char **n_path, *_full_path;
-	int comm_len = 0;
+	int comm_len;
 
 	comm_len = _strlen(command);
 
@@ -30,7 +32,7 @@ char *func_put_path(char *command, char *argenv[])
 
 	write(STDERR_FILENO, "Error: ", 7);
 	write(STDERR_FILENO, command, comm_len);
-	write(STDERR_FILENO; " does not exist\n", 16);
+	write(STDERR_FILENO, " does not exist\n", 16);
 
 	free(n_path);
 

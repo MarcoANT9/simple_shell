@@ -12,7 +12,7 @@
  */
 char **_interpreter(char *buff)
 {
-	int index = 0, jndex = 0, kndex = 0, space_counter = 0;
+	int index = 0, kndex = 0, space_counter = 0;
 	char **name, *token;
 
 	while (*(buff + index) != '\0') /** This counts spaces */
