@@ -21,11 +21,11 @@ char *func_exist(char *argv[], char *argenv[])
 
 	if (_full_path != NULL)
 		return (_full_path);
-	else
-		printf("Error: %s does not exist\n", argv[1]);
+
+	printf("Error: %s does not exist\n", argv[1]);
 
 	free(n_path);
 
-	return (0);
+	return (NULL);
 
 }

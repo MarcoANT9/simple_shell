@@ -33,6 +33,9 @@ void _prompt_shell(char *argenv[]);
 /** 3. Simple Shell without Prompt with argv */
 void _args_shell(char *argv[], char *argenv[]);
 
+/** A. Interpreter */
+char **_interpreter(char *buff);
+
 /** 4. Function decide if a command exits or not */
 char *func_exits(char *argv[], char *argenv[]);
 
