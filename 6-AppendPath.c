@@ -46,11 +46,11 @@ char *full_path(char *tokenpath[], char *command)
 		{
 			com_pat[jndex_pat] = tokenpath[index_pat][jndex_pat];
 			jndex_pat++;
-
 		}
 		com_pat[jndex_pat] = '/';
 		jndex_pat++;
 		index_com = 0;
+
 		while (command[index_com] != '\0')
 		{
 			com_pat[jndex_pat + index_com] = command[index_com];
@@ -59,7 +59,7 @@ char *full_path(char *tokenpath[], char *command)
 		com_pat[jndex_pat + index_com] = '\0';
 		index_pat++;
 
-		if (access(com_pat, F_OK) == 0)
+		if (access(com_pat, F_OK) == 0) /** The file exist */
 			return (com_pat);
 		free(com_pat);
 	}

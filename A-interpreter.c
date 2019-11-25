@@ -34,4 +34,3 @@ char **_interpreter(char *buff)
 	name[kndex] = NULL;
 	return (name);
 }
-

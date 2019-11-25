@@ -22,7 +22,7 @@ char **create_path(char *P)
 		i++;
 	}
 
-	tokenpath = malloc(sizeof(char *) * (colon_counter + 2));
+	tokenpath = malloc(sizeof(char *) * (colon_counter + 2));/**←REMEMBER!*/
 	if (tokenpath == NULL)
 		return (NULL);
 	i = 0;
