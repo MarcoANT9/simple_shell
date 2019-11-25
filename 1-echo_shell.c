@@ -1,7 +1,7 @@
 #include "dragola.h"
 
 /**
- * _interpreter - Simulates the interpreter part of the shell.
+ *_echo_interpreter - Simulates the interpreter part of the shell.
  *
  * @buff: Received buffer to write.
  *
@@ -49,7 +49,7 @@ char **_echo_interpreter(char *buff)
 }
 
 /**
- * _simple_shell - Emulates a simple shell.
+ * _echo_shell - Emulates a simple shell.
  *
  * @argenv: Environment variables.
  *

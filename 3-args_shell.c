@@ -15,7 +15,6 @@
 char **_interpreter3(char *func_name, char **argv)
 {
 /** ↓ Modify Here
-
 	int index = 0, jndex = 0, kndex = 0, space_counter = 0;
 	char **name, *token, *input;
 
@@ -50,24 +49,9 @@ char **_interpreter3(char *func_name, char **argv)
 	name[kndex] = NULL;
 	free (input);
 	return (name);
+
 */
 }
-
-
-/**
- * add_path3 - Adds path for commands.
- *
- * @argv: name of the command to find the path.
- * @argenv: Environment variables.
- *
- * Description - This function adds the path to a command which doesn't have it.
- *               The 3 at the end means is for the 3rd variaton of shell.
- *
- * Return: An array of chars (char *) to the new name.
- */
-
-
-
 
 /**
  * _args_shell - Emulates a simple shell.

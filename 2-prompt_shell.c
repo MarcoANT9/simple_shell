@@ -76,11 +76,11 @@ void _prompt(void)
  *
  * Return: Nothing (void).
  */
-void _kill_child(int pid)
+/**void _kill_child(int pid)
 {
 	kill(pid, SIGTERM);
 }
-
+*/
 /**
  * _prompt_shell - Emulates a simple shell prompt.
  *
@@ -123,7 +123,7 @@ void _prompt_shell(char *argenv[])
 			exe = execve(name[0], name, argenv);
 			if (exe == -1)
 			{
-				write(2, "File or directory not found\n", 28);
+				write(STDERR_FILENO, "File or directory not found\n", 28);
 				free(buff);
 				free(name);
 			}
@@ -131,7 +131,6 @@ void _prompt_shell(char *argenv[])
 		else
 		{
 			wait(&stat);
-			_kill_child(0);
 		}
 	} while (1);
 }
