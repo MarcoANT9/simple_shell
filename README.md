@@ -11,8 +11,12 @@ Simple Shell files:
 File  | Description
 ------------- | -------------
 dragola.h  | Contains all the functions, structures and standard C library header file.
-main.c  | Content Cell
-_shell.c | Content Cell
+0-main.c  | Determine what function to use.
+1-echo_shell.c | Part of shell which handles the inputs via echo command.
+2-prompt_shell.c | Shows the prompt waiting for command input.
+3-args_shell.c | 
+4-Func_exist | Put the path if not exists.
+5-FindP
 _man_1_simple_shell | Contains the manual page simple shell.
 ## Environment
 Simple Shell was built and tested in the Ubuntu 14.04 LTS with Vagrant in VirtualBox and compiled with GCC version 4.8.4.
