@@ -3,7 +3,7 @@
 int _strlen(char *);
 
 /**
- * func_fun_path - This function will create a PATH for a command.
+ * func_put_path - This function will create a PATH for a command.
  *
  * @command: Name of the command.
  * @argenv: Environment variables of the system.
@@ -16,9 +16,6 @@ char *func_put_path(char *command, char *argenv[])
 {
 
 	char **n_path, *_full_path;
-	int comm_len;
-
-	comm_len = _strlen(command);
 
 	n_path = find_path(argenv); /** 5.FindPath */
 
@@ -29,10 +26,6 @@ char *func_put_path(char *command, char *argenv[])
 		free(n_path);
 		return (_full_path);
 	}
-
-	write(STDERR_FILENO, "Error: ", 7);
-	write(STDERR_FILENO, command, comm_len);
-	write(STDERR_FILENO, " does not exist\n", 16);
 
 	free(n_path);
 
