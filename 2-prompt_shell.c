@@ -1,5 +1,7 @@
 #include "dragola.h"
 
+int _exit_(char *buff);
+
 /**
  * _prompt- Prints a prompt
  *
@@ -13,7 +15,7 @@ void _prompt(void)
 	if (writ == -1)
 	{
 		perror("Shell:");
-		exit(98); /** ← REVISAR */
+		return; /** ← REVISAR */
 	}
 }
 
@@ -140,17 +142,18 @@ void _prompt_shell(char *argenv[])
 	int rdl, mode = 0, status; /** Execute and read line */
 	char *buff, **name, **argenv_copy;
 	pid_t child;
-	size_t bytes_read = 512;
+	size_t bytes_read = 20;
 
 	do {
 		_prompt();
-		buff = malloc(sizeof(char) * (512)); /** To store input */
+		buff = malloc(sizeof(char) * 20);
 		if (buff == NULL)
 			return;
 		rdl = getline(&buff, &bytes_read, stdin);
-		if (rdl == -1)
+		if (rdl == -1 || _exit_(buff) == 1)
 		{
-			write(STDOUT_FILENO, "\n", 1);
+			if (_exit_(buff) == 0)
+				write(STDOUT_FILENO, "\n", 3);
 			free(buff);
 			return;
 		}

@@ -1,6 +1,34 @@
 #include "dragola.h"
 
 /**
+ * _exit_ - Determines if the exit command has been inputed.
+ *
+ * @buff: Readed buffer.
+ *
+ * Return: → 1 if the command is exit.
+ *         → 0 if the command is not exit.
+ */
+
+int _exit_(char *buff)
+{
+	char *_exi1 = "exit";
+	char *_exi2 = "EXIT";
+	int index = 0;
+
+	while (index < 4)
+	{
+		if (buff[index] == _exi1[index] || buff[index] == _exi2[index])
+			index++;
+		else
+			break;
+	}
+
+	if (index == 4)
+		return (1);
+	return (0);
+}
+
+/**
  * _interpreter - Simulates the interpreter part of the shell.
  *
  * @buff: Received buffer to write.
