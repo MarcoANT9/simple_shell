@@ -30,19 +30,16 @@ void _echo_shell(char *argenv[]);
 /** 2. Simple Shell with Prompt */
 void _prompt_shell(char *argenv[]);
 
-/** 3. Simple Shell without Prompt with argv */
-void _args_shell(char *argv[], char *argenv[]);
-
 /** A. Interpreter */
 char **_interpreter(char *buff);
 
-/** 4. Function put the PATH */
+/** 3. Function put the PATH */
 char *func_put_path(char *command, char *argenv[]);
 
-/** 5. Create the path */
+/** 4. Create the path */
 char **find_path(char *argenv[]);
 
-/** 6. Combinate command with the folder in which it is located. */
+/** 5. Combinate command with the folder in which it is located. */
 char *full_path(char *tokenpath[], char *command);
 
 
