@@ -5,11 +5,12 @@
  *
  * @buff: Received buffer to write.
  *
- * Description - The shell is composed of three parts, this is the second part,
- *               it takes the input and creates the tokens for execution.
+ * Description - Receives what is written in the terminal, it takes
+ *               the input and creates the tokens for execution.
  *
  * Return: An array of char*, NULL if something fails.
  */
+
 char **_interpreter(char *buff)
 {
 	int index = 0, kndex = 0, space_counter = 0;
