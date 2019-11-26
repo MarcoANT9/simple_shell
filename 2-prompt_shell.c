@@ -137,7 +137,7 @@ void free_mem(char *buff, char **name, char **argenv_copy)
 
 void _prompt_shell(char *argenv[])
 {
-	int rdl, mode = 0; /** Execute and read line */
+	int rdl, mode = 0, status; /** Execute and read line */
 	char *buff, **name, **argenv_copy;
 	pid_t child;
 	size_t bytes_read = 512;
@@ -151,14 +151,15 @@ void _prompt_shell(char *argenv[])
 		if (rdl == -1)
 		{
 			write(STDOUT_FILENO, "\n", 1);
-			exit(98);
+			free(buff);
+			return;
 		}
 		argenv_copy = copy_env(argenv_copy, argenv);
 		name = _interpreter(buff);
 		if (name == NULL)
 		{
 			write(STDOUT_FILENO, "\n", 1);
-			free(buff);
+			free_mem(buff, name, argenv_copy);
 			return;
 		}
 		child = fork();
@@ -168,12 +169,12 @@ void _prompt_shell(char *argenv[])
 				exe_path(name, 1, argenv_copy);
 			else /** Execute if command with PATH is found */
 				exe_path(name, 0, argenv_copy);
-
 			free_mem(buff, name, argenv_copy);
+			return;
 		}
 		else
 		{
-			wait(NULL);
+			wait(&status);
 		}
 	} while (mode == 0);
 }
