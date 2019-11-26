@@ -14,8 +14,8 @@ void _prompt(void)
 	writ = write(STDOUT_FILENO, "(° -°)> ", 10);
 	if (writ == -1)
 	{
-		perror("Shell:");
-		return; /** ← REVISAR */
+		write(STDIN_FILENO, "\n", 1);
+		exit(0);
 	}
 }
 
@@ -153,7 +153,7 @@ void _prompt_shell(char *argenv[])
 		if (rdl == -1 || _exit_(buff) == 1)
 		{
 			if (_exit_(buff) == 0)
-				write(STDOUT_FILENO, "\n", 3);
+				write(STDOUT_FILENO, "\n", 1);
 			free(buff);
 			return;
 		}
