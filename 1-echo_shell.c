@@ -29,7 +29,7 @@ void _echo_shell(char *argenv[])
 	if (rdl == -1)
 	{
 		write(STDOUT_FILENO, "\n", 1);
-		exit(98);
+		return;
 	}
 	name = _interpreter(buff);
 	if (name == NULL)
