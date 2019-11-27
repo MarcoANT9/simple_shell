@@ -4,7 +4,7 @@ This is a project to create a simple shell, where basic functions will be implem
 
 ## Description
 
-The simple shell is a command line interpreter that was first conceived by Ken Thompson in 1971. Users can direct the operation of the computer by entering commands as text for a command line interpreter to execute, or by creating text scripts of one or more such commands. This shell includes basic functionality found in the traditional Unix shell.
+The simple shell is a command line interpreter where it provides direct communication between the user and the machine. This shell includes the basic functionality found in the traditional Unix shell.
 
 ## Repository Contents
 Simple Shell files:
@@ -18,7 +18,7 @@ dragola.h  | Contains all the functions, structures and standard C library heade
 3-Func_exist.c | Put the path if not exists.
 4-FindPath.c | Create array of pointers with the path.
 5-AppendPath.c | Combinate a command inserted with the directory in which it is located.
-A-interpreter.c | It takes the input and creates the tokens for execution.
+A-Support.c | It takes the input and creates the tokens for execution.
 _man_1_simple_shell | Contains the manual page simple shell.
 AUTHORS | Contains the names of the contributors content to the repository.
 

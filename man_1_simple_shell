@@ -12,17 +12,14 @@ simple_shell -- hsh
 .SH OVERVIEW
 The simple shell interprets and executes commands.
 .SH EXAMPLE
-.IP
-$./hsh
-$ls
-/home/vagrant/simple_shell
-$
-$/bin/ls
-/home/vagrant/simple_shell
-$
+
 .SH OPTIONS
 .SH FILES
-.I dragola.c
+.It                  \"-a flag as a list item
+Description of -a flag
+.It Fl b
+Description of -b flag
+.I dragola.h
 - Contains all the functions, structures and standard C library header file.
 .I main.c
 - Information
