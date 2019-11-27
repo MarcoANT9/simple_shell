@@ -1,6 +1,7 @@
 #include "dragola.h"
 
 int _exit_(char *buff);
+int _strlen(char *str);
 
 /**
  * _prompt- Prints a prompt
@@ -31,7 +32,17 @@ void _prompt(void)
  */
 void exe_path(char **name, int mode, char **argenv)
 {
-	int exe;
+	int exe, index = 0;
+	int str_len = _strlen(name[0]);
+	char *command;
+
+	command = malloc(sizeof(char) * (str_len + 1));
+
+	while (name[0][index] != '\0')
+	{
+		command[index] = name[0][index];
+		index++;
+	}
 
 	if (mode == 1)
 	{
@@ -39,7 +50,8 @@ void exe_path(char **name, int mode, char **argenv)
 		exe = execve(name[0], name, argenv);
 		if (exe == -1)
 		{
-			write(2, "File or directory not found\n", 28);
+			write(2, command, str_len);
+			write(2, ": command not found\n", 20);
 		}
 		free(name[0]);
 	}
@@ -47,8 +59,12 @@ void exe_path(char **name, int mode, char **argenv)
 	{
 		exe = execve(name[0], name, argenv);
 		if (exe == -1)
-			write(2, "File or directory not found\n", 28);
+		{
+			write(2, command, str_len);
+			write(2, ": command not found\n", 20);
+		}
 	}
+	free(command);
 }
 
 /**

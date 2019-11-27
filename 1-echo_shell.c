@@ -1,5 +1,8 @@
 #include "dragola.h"
 
+int _strlen(char *str);
+void exe_path(char **, int, char **);
+
 /**
  * _echo_shell - Emulates a simple shell.
  *
@@ -14,7 +17,7 @@
 
 void _echo_shell(char *argenv[])
 {
-	int exe, rdl; /** Execute and read line */
+	int rdl;
 	char *buff, **name;
 	size_t bytes_read = 512;
 
@@ -35,20 +38,10 @@ void _echo_shell(char *argenv[])
 		free(buff);
 		return;
 	}
-	if (access(name[0], F_OK) == -1) /** Determinate if the PATH does not exits */
-	{
-		name[0] = func_put_path(name[0], argenv); /** Puts the PATH */
-		exe = execve(name[0], name, argenv);
-		if (exe == -1)
-			write(2, "File or directory not found\n", 28);
-		free(name[0]);
-	}
+	if (access(name[0], F_OK) == -1) /** If the PATH exits or not */
+		exe_path(name, 1, argenv);
 	else /** Execute if command with PATH is found */
-	{
-		exe = execve(name[0], name, argenv);
-		if (exe == -1)
-			write(2, "File or directory not found\n", 28);
-	}
+		exe_path(name, 0, argenv);
 
 	free(buff);
 	free(name);
