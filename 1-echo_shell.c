@@ -1,8 +1,5 @@
 #include "dragola.h"
 
-int _strlen(char *str);
-void exe_path(char **, int, char **);
-
 /**
  * _echo_shell - Emulates a simple shell.
  *

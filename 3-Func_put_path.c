@@ -1,7 +1,5 @@
 #include "dragola.h"
 
-int _strlen(char *);
-
 /**
  * func_put_path - This function will create a PATH for a command.
  *

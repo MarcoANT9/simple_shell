@@ -1,8 +1,5 @@
 #include "dragola.h"
 
-int _exit_(char *buff);
-int _strlen(char *str);
-
 /**
  * _prompt- Prints a prompt
  *
@@ -12,7 +9,7 @@ void _prompt(void)
 {
 	int writ;
 
-	writ = write(STDOUT_FILENO, "(° -°)> ", 10);
+	writ = write(STDOUT_FILENO, "$ ", 2);
 	if (writ == -1)
 	{
 		write(STDIN_FILENO, "\n", 1);
@@ -171,7 +168,7 @@ void _prompt_shell(char *argenv[])
 			if (_exit_(buff) == 0)
 				write(STDOUT_FILENO, "\n", 1);
 			free(buff);
-			return;
+			exit(0);
 		}
 		argenv_copy = copy_env(argenv_copy, argenv);
 		name = _interpreter(buff);
@@ -179,7 +176,7 @@ void _prompt_shell(char *argenv[])
 		{
 			write(STDOUT_FILENO, "\n", 1);
 			free_mem(buff, name, argenv_copy);
-			return;
+			exit(0);
 		}
 		child = fork();
 		if (child == 0)
@@ -189,7 +186,7 @@ void _prompt_shell(char *argenv[])
 			else /** Execute if command with PATH is found */
 				exe_path(name, 0, argenv_copy);
 			free_mem(buff, name, argenv_copy);
-			return;
+			exit(0);
 		}
 		else
 		{

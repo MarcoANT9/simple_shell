@@ -1,4 +1,5 @@
 #include "dragola.h"
+
 /**
  * create_path - Separates Path in tokens.
  *
