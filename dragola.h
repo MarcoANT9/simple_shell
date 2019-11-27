@@ -9,9 +9,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 #include <string.h>
 #include <signal.h>
+#include <errno.h>
 
 /**========================================================================*/
 /**-STRUCTURES-& DEFINITIONS-----------------------------------------------*/
@@ -41,10 +43,5 @@ char **find_path(char *argenv[]);
 
 /** 5. Combinate command with the folder in which it is located. */
 char *full_path(char *tokenpath[], char *command);
-
-
-
-
-
 
 #endif
