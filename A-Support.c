@@ -23,12 +23,12 @@ char *_strcpy(char *dest, char *src)
 	return (dest);
 }
 /**
+ * _usr_exit - Custom Exit.
  *
  *
  *
  *
- *
- *
+ * Return: Nothing (void).
  */
 void _usr_exit(void)
 {

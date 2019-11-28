@@ -29,7 +29,7 @@ int _strcomp(char *str1, char *str2)
 }
 
 /**
- * pritn_env - Prints environment variables.
+ * print_env - Prints environment variables.
  *
  * @env: Environment variables.
  *
