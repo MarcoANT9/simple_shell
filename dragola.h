@@ -39,6 +39,10 @@ void free_mem(char *buff, char **name, char **argenv_copy);
 /** A. Support */
 char **_interpreter(char *buff);
 int _exit_(char *buff);
+void free_array_pointer(char **buff);
+int _strcomp(char *str1, char *str2);
+void _usr_exit(void);
+void print_env(char **env);
 
 /** 3. Function put the PATH */
 char *func_put_path(char *command, char *argenv[]);

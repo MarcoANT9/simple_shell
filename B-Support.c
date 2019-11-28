@@ -7,14 +7,8 @@
  */
 void _prompt(void)
 {
-	int writ;
 
-	writ = write(STDOUT_FILENO, "$ ", 2);
-	if (writ == -1)
-	{
-		write(STDIN_FILENO, "\n", 1);
-		exit(0);
-	}
+	write(STDOUT_FILENO, "(° -°)> ", 10);
 }
 
 /**
@@ -114,6 +108,27 @@ char **copy_env(char **dest, char **argenv)
 }
 
 /**
+ * free_array_pointer - Frees an allocation of double pointers.
+ *
+ * @array: Array of pointers to free.
+ *
+ * Return: Nothing (void).
+ */
+void free_array_pointer(char *array[])
+{
+	int index = 0;
+
+	while (array[index] != NULL)
+	{
+		free(array[index]);
+		index++;
+	}
+	free(array[index]);
+	free(array);
+
+}
+
+/**
  * free_mem - Free memory.
  *
  * @buff: Input reading buffer.
@@ -125,72 +140,8 @@ char **copy_env(char **dest, char **argenv)
 
 void free_mem(char *buff, char **name, char **argenv_copy)
 {
-	int index_env = 0;
 
 	free(buff);
-	free(name);
-	while (argenv_copy[index_env] != NULL)
-	{
-		free(argenv_copy[index_env]);
-		index_env++;
-	}
-	free(argenv_copy[index_env]);
-	free(argenv_copy);
-}
-
-/**
- * _prompt_shell - Emulates a simple shell.
- *
- * @argenv: Environment variables.
- *
- * Description - This program emulates a simple shell with its prompt which
- *               waits for the user to input a command.
- *
- * Return: Nothing (Void).
- *
- */
-
-void _prompt_shell(char *argenv[])
-{
-	int rdl, mode = 0, status; /** Execute and read line */
-	char *buff, **name, **argenv_copy;
-	pid_t child;
-	size_t bytes_read = 20;
-
-	do {
-		_prompt();
-		buff = malloc(sizeof(char) * 20);
-		if (buff == NULL)
-			return;
-		rdl = getline(&buff, &bytes_read, stdin);
-		if (rdl == -1 || _exit_(buff) == 1)
-		{
-			if (_exit_(buff) == 0)
-				write(STDOUT_FILENO, "\n", 1);
-			free(buff);
-			exit(0);
-		}
-		argenv_copy = copy_env(argenv_copy, argenv);
-		name = _interpreter(buff);
-		if (name == NULL)
-		{
-			write(STDOUT_FILENO, "\n", 1);
-			free_mem(buff, name, argenv_copy);
-			exit(0);
-		}
-		child = fork();
-		if (child == 0)
-		{
-			if (access(name[0], F_OK) == -1) /**Command has path?*/
-				exe_path(name, 1, argenv_copy);
-			else /** Execute if command with PATH is found */
-				exe_path(name, 0, argenv_copy);
-			free_mem(buff, name, argenv_copy);
-			exit(0);
-		}
-		else
-		{
-			wait(&status);
-		}
-	} while (mode == 0);
+	free_array_pointer(name);
+	free_array_pointer(argenv_copy);
 }

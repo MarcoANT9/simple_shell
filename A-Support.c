@@ -1,6 +1,41 @@
 #include "dragola.h"
 
 /**
+ * _strcpy - Copies a string to another.
+ *
+ * @dest: Destiny of the copy.
+ * @src: Source of the string.
+ *
+ * Return: Copied string (char *).
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int index = 0;
+
+	while (src[index] != '\0')
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	dest[index] = src[index];
+
+	return (dest);
+}
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+void _usr_exit(void)
+{
+	return;
+
+}
+/**
  * _exit_ - Determines if the exit command has been inputed.
  *
  * @buff: Readed buffer.
@@ -41,7 +76,7 @@ int _exit_(char *buff)
 
 char **_interpreter(char *buff)
 {
-	int index = 0, kndex = 0, space_counter = 0;
+	int index = 0, kndex = 0, space_counter = 0, word_len;
 	char **name, *token;
 
 	while (*(buff + index) != '\0') /** This counts spaces */
@@ -56,7 +91,14 @@ char **_interpreter(char *buff)
 	token = strtok(buff, " \n");
 	while (token != NULL)/** This separate the command in tokens */
 	{
-		name[kndex] = token;
+		word_len = _strlen(token);
+		name[kndex] = malloc(sizeof(char) * (word_len + 1));
+		if (name[kndex] == NULL)
+		{
+			free_array_pointer(name);
+			return (NULL);
+		}
+		_strcpy(name[kndex], token);
 		token = strtok(NULL, " \n");
 		kndex++;
 	}
