@@ -11,14 +11,14 @@ Simple Shell files:
 
 File  | Description
 ------------- | -------------
-dragola.h  | Contains all the functions, structures and standard C library header file.
-0-main.c  | Determine what function to use.
-1-echo_shell.c | Part of shell which handles the inputs via echo command.
-2-prompt_shell.c | Shows the prompt waiting for command input.
-3-Func_exist.c | Put the path if not exists.
-4-FindPath.c | Create array of pointers with the path.
-5-AppendPath.c | Combinate a command inserted with the directory in which it is located.
-A-Support.c | It takes the input and creates the tokens for execution.
+dragola.h  | Header file, contains all the functions, structures and standard C libraries.
+0-main.c  | Contains the functions that execute the shell.
+1-Func_put_path.c | Creates the path for a command.
+2-FindPath.c | Finds the path in the environment variables.
+3-AppendPath.c | Adds the path to a command if it doesn't have it.
+A-Support.c | Contains support functions.
+B-Support.c | Contains support functions.
+C-Support.c | Contains support functions.
 _man_1_simple_shell | Contains the manual page simple shell.
 AUTHORS | Contains the names of the contributors content to the repository.
 

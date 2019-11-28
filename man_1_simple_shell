@@ -5,28 +5,54 @@
 simple_shell -- hsh
 .SH SYNOPSIS
 .B ./hsh
-[command] [options]
 .SH DESCRIPTION
 .B hsh
 (Simple Shell) A simple command line interpreter.
 .SH OVERVIEW
 The simple shell interprets and executes commands.
 .SH EXAMPLE
+.IP
+
+$ ./hsh
+
+$ pwd
+
+/home/vagrant/simple_shell
+
+$
+
+$ /bin/pwd
+
+/home/vagrant/simple_shell
+
+$
 
 .SH OPTIONS
+.B Simple Shell
+operates in both 
+.I interactive 
+and 
+.I non-interactive mode.
 .SH FILES
-.It                  \"-a flag as a list item
-Description of -a flag
-.It Fl b
-Description of -b flag
-.I dragola.h
-- Contains all the functions, structures and standard C library header file.
-.I main.c
-- Information
-.I _shell.c
-- Information
+.IP    
+[ 0-main.c ]
+
+[ 1-Func_put_path.c ]
+
+[ 2-FindPath.c ]
+
+[ 3-AppendPath.c ]
+
+[ A-Support.c ]
+
+[ B-Support.c ]
+
+[ C-Support.c ]
+
+[ dragola.h ]
+
 .SH Return Value
-After a successful result, the main functions will return the desired commands.
+After a successful result, the main function will return 0, and 1 if it fails.
 .SH BUGS
 Report
 .B simple shell
